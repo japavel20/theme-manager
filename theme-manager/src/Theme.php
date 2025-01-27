@@ -28,18 +28,44 @@ class Theme
      * 
      * @return string
      */
-    public function getCssPath()
+    public function getCssFiles()
     {
-        $theme = $this->getActiveTheme();
-        $fallbackTheme = $this->getFallbackTheme();
+        $theme = $this->getActiveTheme(); // Get the active theme
+        $fallbackTheme = $this->getFallbackTheme(); // Get the fallback theme
 
-        // Ensure the CSS file exists for the active theme
-        $cssPath = public_path("themes/{$theme}/assets/css/style.css");
+        // Define the list of CSS files related to the active theme
+        $cssFiles = [
+            "themes/{$theme}/assets/css/sidebar-menu.css",
+            "themes/{$theme}/assets/css/simplebar.css",
+            "themes/{$theme}/assets/css/apexcharts.css",
+            "themes/{$theme}/assets/css/prism.css",
+            "themes/{$theme}/assets/css/rangeslider.css",
+            "themes/{$theme}/assets/css/sweetalert.min.css",
+            "themes/{$theme}/assets/css/quill.snow.css",
+            "themes/{$theme}/assets/css/google-icon.css",
+            "themes/{$theme}/assets/css/remixicon.css",
+            "themes/{$theme}/assets/css/swiper-bundle.min.css",
+            "themes/{$theme}/assets/css/fullcalendar.main.css",
+            "themes/{$theme}/assets/css/style.css", // Main theme CSS
+            "themes/{$theme}/assets/images/favicon.png", // Theme icon
+        ];
 
-        // Return active theme's CSS, fallback to default if not found
-        return file_exists($cssPath) 
-            ? asset("themes/{$theme}/assets/css/style.css") 
-            : asset("themes/{$fallbackTheme}/assets/css/style.css");
+        // Check if each file exists, and return the correct CSS file paths
+        $validCssFiles = [];
+        foreach ($cssFiles as $cssFile) {
+            $filePath = public_path($cssFile);
+            
+            // Check if the CSS file exists for the active theme, fallback to the default theme if not
+            if (file_exists($filePath)) {
+                $validCssFiles[] = asset($cssFile);
+            } else {
+                // Fallback to the default theme if the file is not found for the active theme
+                $fallbackFilePath = str_replace("themes/{$theme}", "themes/{$fallbackTheme}", $cssFile);
+                $validCssFiles[] = asset($fallbackFilePath);
+            }
+        }
+
+        return $validCssFiles; // Return the list of valid CSS files
     }
 
     /**

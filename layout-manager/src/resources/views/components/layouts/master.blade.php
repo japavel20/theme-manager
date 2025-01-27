@@ -6,7 +6,7 @@
     <title>{{ $title ?? 'Default Title' }}</title>
 
     <!-- Dynamic Theme CSS -->
-    <link rel="stylesheet" href="{{ theme()->getCssPath() }}">
+    <x-style/>
 </head>
 <body>
     <header>
