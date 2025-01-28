@@ -5,7 +5,7 @@ class Theme
 {
     /**
      * Get the active theme.
-     * 
+     *
      * @return string
      */
     public function getActiveTheme()
@@ -15,7 +15,7 @@ class Theme
 
     /**
      * Get the fallback theme.
-     * 
+     *
      * @return string
      */
     public function getFallbackTheme()
@@ -25,7 +25,7 @@ class Theme
 
     /**
      * Get the theme's CSS path.
-     * 
+     *
      * @return string
      */
     public function getCssFiles()
@@ -54,7 +54,7 @@ class Theme
         $validCssFiles = [];
         foreach ($cssFiles as $cssFile) {
             $filePath = public_path($cssFile);
-            
+
             // Check if the CSS file exists for the active theme, fallback to the default theme if not
             if (file_exists($filePath)) {
                 $validCssFiles[] = asset($cssFile);
@@ -70,21 +70,49 @@ class Theme
 
     /**
      * Get the theme's JS path.
-     * 
+     *
      * @return string
      */
-    public function getJsPath()
+    public function getJsFiles()
     {
-        $theme = $this->getActiveTheme();
-        $fallbackTheme = $this->getFallbackTheme();
+        $theme = $this->getActiveTheme(); // Get the active theme
+        $fallbackTheme = $this->getFallbackTheme(); // Get the fallback theme
 
-        // Ensure the JS file exists for the active theme
-        $jsPath = public_path("themes/{$theme}/assets/js/custom/custom.js");
+        // Define the list of JS files related to the active theme
+        $jsFiles = [
+            "themes/{$theme}/assets/js/bootstrap.bundle.min.js",
+            "themes/{$theme}/assets/js/sidebar-menu.js",
+            "themes/{$theme}/assets/js/dragdrop.js",
+            "themes/{$theme}/assets/js/rangeslider.min.js",
+            "themes/{$theme}/assets/js/sweetalert.js",
+            "themes/{$theme}/assets/js/quill.min.js",
+            "themes/{$theme}/assets/js/data-table.js",
+            "themes/{$theme}/assets/js/prism.js",
+            "themes/{$theme}/assets/js/clipboard.min.js",
+            "themes/{$theme}/assets/js/feather.min.js",
+            "themes/{$theme}/assets/js/simplebar.min.js",
+            "themes/{$theme}/assets/js/apexcharts.min.js",
+            "themes/{$theme}/assets/js/swiper-bundle.min.js",
+            "themes/{$theme}/assets/js/fullcalendar.main.js",
+            "themes/{$theme}/assets/js/custom/apexcharts.js",
+            "themes/{$theme}/assets/js/custom/custom.js",
+        ];
 
-        // Return active theme's JS, fallback to default if not found
-        return file_exists($jsPath) 
-            ? asset("themes/{$theme}/assets/js/custom/custom.js") 
-            : asset("themes/{$fallbackTheme}/assets/js/custom/custom.js");
+        // Check if each file exists, and return the correct JS file paths
+        $validJsFiles = [];
+        foreach ($jsFiles as $jsFile) {
+            $filePath = public_path($jsFile);
+
+            // Check if the JS file exists for the active theme, fallback to the default theme if not
+            if (file_exists($filePath)) {
+                $validJsFiles[] = asset($jsFile);
+            } else {
+                // Fallback to the default theme if the file is not found for the active theme
+                $fallbackFilePath = str_replace("themes/{$theme}", "themes/{$fallbackTheme}", $jsFile);
+                $validJsFiles[] = asset($fallbackFilePath);
+            }
+        }
+
+        return $validJsFiles; // Return the list of valid JS files
     }
 }
-
