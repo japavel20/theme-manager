@@ -12,20 +12,46 @@ class LayoutManagerServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'layout');
         $this->layouts();
         $this->libs();
-        
-        
-
-        
+        $this->partials();
     }
 
-    public function layouts(){
+    public function layouts()
+    {
         // Register Blade components
-        \Illuminate\Support\Facades\Blade::component('theme-master', \Layout\Manager\App\View\Components\Layouts\Master::class);
     }
-    private function libs(){
-        \Illuminate\Support\Facades\Blade::component('style',\Layout\Manager\App\View\Components\Layouts\Libs\Style::class);
-        \Illuminate\Support\Facades\Blade::component('js',\Layout\Manager\App\View\Components\Layouts\Libs\Js::class);
+    private function libs()
+    {
+        \Illuminate\Support\Facades\Blade::component(
+            'style',
+            \Layout\Manager\App\View\Components\Layouts\Libs\Style::class
+        );
+        \Illuminate\Support\Facades\Blade::component('js', \Layout\Manager\App\View\Components\Layouts\Libs\Js::class);
     }
-    
+    private function partials()
+    {
+        \Illuminate\Support\Facades\Blade::component(
+            'theme-master',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Master::class
+        );
+        \Illuminate\Support\Facades\Blade::component(
+            'footer',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Footer::class
+        );
+        \Illuminate\Support\Facades\Blade::component(
+            'preloader',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Preloader::class
+        );
+        \Illuminate\Support\Facades\Blade::component(
+            'sidebar',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Sidebar::class
+        );
+        \Illuminate\Support\Facades\Blade::component(
+            'header',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Header::class
+        );
+        \Illuminate\Support\Facades\Blade::component(
+            'themeSettings',
+            \Layout\Manager\App\View\Components\Layouts\Partials\ThemeSettings::class
+        );
+    }
 }
-

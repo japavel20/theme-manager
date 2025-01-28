@@ -1,10 +1,10 @@
 <?php
 
-namespace Layout\Manager\App\View\Components\Layouts;
+namespace Layout\Manager\App\View\Components\Layouts\Partials;
 
 use Illuminate\View\Component;
 
-class Master extends Component
+class Header extends Component
 {
     /**
      * Create a new component instance.
@@ -13,12 +13,10 @@ class Master extends Component
      */
     public function __construct()
     {
-
         // update default value of $this->layoutConfig using session, db or config
-
     }
     public function render()
     {
-        return view('layout::components.layouts.master');
+        return view('layout::components.layouts.partials.header');
     }
 }
