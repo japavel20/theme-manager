@@ -67,7 +67,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/figma.svg"
+                                            src="/themes/trezo/assets/images/figma.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -79,7 +79,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/dribbble.svg"
+                                            src="/themes/trezo/assets/images/dribbble.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -91,7 +91,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/spotify.svg"
+                                            src="/themes/trezo/assets/images/spotify.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -103,7 +103,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/github.svg"
+                                            src="/themes/trezo/assets/images/github.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -115,7 +115,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/gdrive.svg"
+                                            src="/themes/trezo/assets/images/gdrive.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -127,7 +127,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/trello.svg"
+                                            src="/themes/trezo/assets/images/trello.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -139,7 +139,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/slak.svg"
+                                            src="/themes/trezo/assets/images/slak.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -151,7 +151,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/pinterest.svg"
+                                            src="/themes/trezo/assets/images/pinterest.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -163,7 +163,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/facebook.svg"
+                                            src="/themes/trezo/assets/images/facebook.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -175,7 +175,7 @@
                                         class="dropdown-item p-0 text-center"
                                     >
                                         <img
-                                            src="assets/images/linkedin.svg"
+                                            src="/themes/trezo/assets/images/linkedin.svg"
                                             class="wh-25"
                                             alt="united-states"
                                         />
@@ -255,7 +255,7 @@
                                                     class="flex-shrink-0"
                                                 >
                                                     <img
-                                                        src="assets/images/usa.svg"
+                                                        src="/themes/trezo/assets/images/usa.svg"
                                                         class="wh-30 rounded-circle"
                                                         alt="united-states"
                                                     />
@@ -285,7 +285,7 @@
                                                     class="flex-shrink-0"
                                                 >
                                                     <img
-                                                        src="assets/images/canada.svg"
+                                                        src="/themes/trezo/assets/images/canada.svg"
                                                         class="wh-30 rounded-circle"
                                                         alt="spain"
                                                     />
@@ -315,7 +315,7 @@
                                                     class="flex-shrink-0"
                                                 >
                                                     <img
-                                                        src="assets/images/germany.svg"
+                                                        src="/themes/trezo/assets/images/germany.svg"
                                                         class="wh-30 rounded-circle"
                                                         alt="spain"
                                                     />
@@ -345,7 +345,7 @@
                                                     class="flex-shrink-0"
                                                 >
                                                     <img
-                                                        src="assets/images/portugal.svg"
+                                                        src="/themes/trezo/assets/images/portugal.svg"
                                                         class="wh-30 rounded-circle"
                                                         alt="portugal"
                                                     />
@@ -375,7 +375,7 @@
                                                     class="flex-shrink-0"
                                                 >
                                                     <img
-                                                        src="assets/images/spain.svg"
+                                                        src="/themes/trezo/assets/images/spain.svg"
                                                         class="wh-30 rounded-circle"
                                                         alt="spain"
                                                     />
@@ -696,7 +696,7 @@
                                 <div class="flex-shrink-0">
                                     <img
                                         class="rounded-circle wh-40 administrator"
-                                        src="assets/images/administrator.jpg"
+                                        src="/themes/trezo/assets/images/administrator.jpg"
                                         alt="admin"
                                     />
                                 </div>
@@ -726,7 +726,7 @@
                                     <div class="flex-shrink-0">
                                         <img
                                             class="rounded-circle wh-30 administrator"
-                                            src="assets/images/administrator.jpg"
+                                            src="/themes/trezo/assets/images/administrator.jpg"
                                             alt="admin"
                                         />
                                     </div>

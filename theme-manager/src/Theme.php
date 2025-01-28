@@ -10,7 +10,7 @@ class Theme
      */
     public function getActiveTheme()
     {
-        return config('theme.active', 'treezo'); // Default to 'treezo' if no active theme is set
+        return config('theme.active', 'trezo'); // Default to 'treezo' if no active theme is set
     }
 
     /**
@@ -47,7 +47,6 @@ class Theme
             "themes/{$theme}/assets/css/swiper-bundle.min.css",
             "themes/{$theme}/assets/css/fullcalendar.main.css",
             "themes/{$theme}/assets/css/style.css", // Main theme CSS
-            "themes/{$theme}/assets/images/favicon.png", // Theme icon
         ];
 
         // Check if each file exists, and return the correct CSS file paths
@@ -66,6 +65,38 @@ class Theme
         }
 
         return $validCssFiles; // Return the list of valid CSS files
+    }
+    /**
+     * Get the theme's Image path.
+     *
+     * @return string
+     */
+    public function getImageFiles()
+    {
+        $theme = $this->getActiveTheme(); // Get the active theme
+        $fallbackTheme = $this->getFallbackTheme(); // Get the fallback theme
+
+        // Define the list of CSS files related to the active theme
+        $imageFiles = [
+            "themes/{$theme}/assets/images/favicon.png", // Theme icon
+        ];
+
+        // Check if each file exists, and return the correct CSS file paths
+        $validImageFiles = [];
+        foreach ($imageFiles as $imageFile) {
+            $filePath = public_path($imageFile);
+
+            // Check if the CSS file exists for the active theme, fallback to the default theme if not
+            if (file_exists($filePath)) {
+                $validImageFiles[] = asset($imageFile);
+            } else {
+                // Fallback to the default theme if the file is not found for the active theme
+                $fallbackFilePath = str_replace("themes/{$theme}", "themes/{$fallbackTheme}", $imageFile);
+                $validImageFiles[] = asset($fallbackFilePath);
+            }
+        }
+
+        return $validImageFiles; // Return the list of valid CSS files
     }
 
     /**

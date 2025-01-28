@@ -15,16 +15,22 @@ class Style extends Component
      */
     public function __construct(Theme $theme)
     {
-        
         $this->theme = $theme;
-
     }
     public function getCssFiles()
     {
         return $this->theme->getCssFiles();
     }
+
+    public function getImageFiles()
+    {
+        return $this->theme->getImageFiles();
+    }
     public function render()
     {
-        return view('layout::components.layouts.libs.style', ['cssFiles' => $this->getCssFiles()]);
+        return view('layout::components.layouts.libs.style', [
+            'cssFiles' => $this->getCssFiles(),
+            'imageFiles' => $this->getImageFiles(),
+        ]);
     }
 }
