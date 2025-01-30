@@ -22,11 +22,17 @@
             </li>
 
             <li class="menu-item">
-                <a href="logout" class="menu-link logout">
-                    <span class="material-symbols-outlined menu-icon">logout</span>
-                    <span class="title">Logout</span>
-                </a>
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+
+                    <a href="{{ route('logout') }}" class="menu-link logout" @click.prevent="$root.submit();">
+                        <span class="material-symbols-outlined menu-icon">logout</span>
+                        <span class="title">Logout</span>
+                    </a>
+                </form>
             </li>
+            
         </ul>
     </aside>
 </div>

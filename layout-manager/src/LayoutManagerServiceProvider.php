@@ -30,8 +30,8 @@ class LayoutManagerServiceProvider extends ServiceProvider
     private function partials()
     {
         \Illuminate\Support\Facades\Blade::component(
-            'theme-master',
-            \Layout\Manager\App\View\Components\Layouts\Partials\Master::class
+            'theme-guest',
+            \Layout\Manager\App\View\Components\Layouts\Partials\Guest::class
         );
         \Illuminate\Support\Facades\Blade::component(
             'footer',
