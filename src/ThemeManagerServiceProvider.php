@@ -21,6 +21,10 @@ class ThemeManagerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../public/themes' => public_path('themes'),
         ], 'public'); // Correct the tag to 'public' for assets
+
+        $this->publishes([
+            __DIR__ . '/../stubs/App' => app_path('/')
+        ]);
     }
 
     /**
