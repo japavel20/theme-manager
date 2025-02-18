@@ -1,4 +1,5 @@
 <?php
+
 namespace ThemeManager;
 
 class Theme
