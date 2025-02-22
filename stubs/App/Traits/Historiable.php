@@ -47,7 +47,6 @@ trait Historiable
             $data['action'] = 'updated';
             if (Schema::hasColumn($historiesTable, 'id')) {
                 $columnType = Schema::getColumnType($historiesTable, 'id'); // Get column type
-                dd($columnType);
                 if ($columnType === 'uuid' || $columnType === 'char') {
                     // ✅ If UUID, generate one
                     $data['id'] = Str::uuid()->toString();
@@ -55,9 +54,6 @@ trait Historiable
                     // ✅ If integer (auto-increment), remove 'id' so Laravel handles it
                     unset($data['id']);
                 }
-            }
-            if (!Str::isUuid($data['id'])) {
-                unset($data['id']);
             }
             DB::connection($model->connection)->table($singularTableName . '_histories')->insert($data);
         });
@@ -78,9 +74,6 @@ trait Historiable
                     // ✅ If integer (auto-increment), remove 'id' so Laravel handles it
                     unset($data['id']);
                 }
-            }
-            if (!Str::isUuid($data['id'])) {
-                unset($data['id']);
             }
             DB::connection($model->connection)->table($singularTableName . '_histories')->insert($data);
         });
